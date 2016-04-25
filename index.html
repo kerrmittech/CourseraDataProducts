@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reproducible Pitch Presentation</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Reproducible Pitch Presentation">
+  <meta name="author" content="Mike Kerr">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Reproducible Pitch Presentation</h1>
+    <h2>LEGO Sets Visualization</h2>
+    <p>Mike Kerr<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>LEGO Sets Visualization</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This Shiny App is for searching and visulizating LEGO Sets information.</p>
+
+<p>The dataset is from <a href="http://rebrickable.com/">Rebrickable.com</a> that contains the basic information of each set (set id, year, number of pieces, theme, set name).</p>
+
+<p>Application will allow to search Lego set using year, Theme or based on number of pieces.</p>
+
+<ul>
+<li>Data Source: <a href="http://rebrickable.com/downloads">http://rebrickable.com/downloads</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The Application</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To display the understanding of using shiny to build an application, a simple application called LEGO Set Lookup Tool has been at: <a href="https://kerrmittech.shinyapps.io/LEGOSetDB/">https://kerrmittech.shinyapps.io/LEGOSetDB/</a></p>
+
+<p>This Shiny App is for searching and visualizing LEGO Sets from the years 1950 to 2016.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The Data</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This application is based on the Rebrickable.com LEGO set database.</p>
+
+<p>Dataset has been obtained from <a href="http://rebrickable.com/downloads">here</a> and processed for the course project. </p>
+
+<p>Source code for the project is available on my <a href="https://github.com/kerrmittech/CourseraDataProducts">GitHub</a> page.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Data Import and assign column name</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Load data from file.</li>
+<li>Assign header to each column.</li>
+<li>Create aggregates required for web site.</li>
+</ul>
+
+<pre><code class="r"># Load required libraries
+require(data.table)
+# library(sqldf)
+library(dplyr)
+library(DT)
+library(rCharts)
+
+# Read data
+data &lt;- fread(&quot;D:/Data/Coursera/Data Projects/LEGOSetDB/Data/sets.csv&quot;)
+setnames(data, &quot;t1&quot;, &quot;theme&quot;)
+setnames(data, &quot;descr&quot;, &quot;name&quot;)
+setnames(data, &quot;set_id&quot;, &quot;setId&quot;)
+head(data,4)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='LEGO Sets Visualization'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The Application'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The Data'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Data Import and assign column name'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
